@@ -1,0 +1,154 @@
+<!--
+ This file is part of semestral assigment
+ STONE RUSH GAME for A0M33KAJ course
+ at CTU FEE, 2014
+ 
+ @author Tom Pastýřík <mail@tomaspastyrik.cz>
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stone Rush</title>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+        <!-- ONLINE USE <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+         <script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>  
+        -->
+
+        <script src="js/libs/jquery-1.9.0.min.js"></script>
+        <script src="js/libs/easeljs-0.6.0.min.js"></script>
+        <script src="js/libs/keydrown.min.js"></script>
+
+        <link rel="stylesheet" href="css/gameGrid.css">
+
+        <script src="js/utils.js"></script>
+        <script src="js/Hero.js"></script>
+        <script src="js/stoneDefinitions.js"></script>
+        <script src="js/GridInitializer.js"></script>
+        <script src="js/StonesGenerator.js"></script>
+        <script src="js/StonesPuller.js"></script>
+        <script src="js/Gameplay.js"></script>
+        <script src="js/HeroAnimator.js"></script>
+        <script src="js/InputHandler.js"></script>
+        <script src="js/GameGrid.js"></script>
+        <script src="js/Level.js"></script>
+        <script src="js/StoneTimeout.js"></script>
+        <script src="js/StoneRushGame.js"></script>
+        <script src="js/ContentManager.js"></script>
+        <script src="js/SVGBorder.js"></script>
+
+    </head> 
+    <body>
+        <aside id="description">
+            <p id="descriptionText">
+                Developed by <br>Tomáš Pastýřík <br>
+                as assigment for <a target="_blank" href="http://seznam.github.io/CVUT/A0M33KAJ/" title="link to course">A0M33KAJ</a> course<br>
+                at CTU.
+            </p>
+
+        </aside>
+        <h1>
+            STONE RUSH
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="">new game</a></li>
+                <li><a id="rulesLink" href="#rules">rules</a></li>
+                <li><a id="creditsLink" href="#credits">credits</a></li>
+                <li id="currentLevel">current level: <span>1</span></li>
+            </ul>
+        </nav>
+        <div id="gameOver">
+            <h2>GAME OVER</h2>
+            <div class="win">CONGRATULATION, YOU WIN THIS LEVEL!<br>
+                <a id="nextLevel" href="" title="Next level"><button>continue to next level</button></a>
+            </div>
+            <div class="loose">YOU LOOSE, LOOOOSER!</div>
+            <div class="starWarsText">
+                <p>
+                </p>
+            </div>
+        </div>
+        <div id="rules" class="overlay">
+
+            <article>
+                <h2>RULES</h2>
+
+                <p>
+                    Help master Yoda to find his way home! <br>No wonder he got lost again considering
+                    his age...
+
+                </p>
+                <ul>
+                    <li>* Use W, A, S, D keys to move master Yoda!</li>
+                    <li>* Use THE FORCE (a.k.a. dragging with mouse left click) to move the stones that fly around</li>
+                    <li>* Use his neverending wisdom to move quickly towards the finish flag. Mighty compass can assist you.</li>
+                    <li>* Beware of the stones durability! Even stones are not what they used to be.</li>
+                </ul>
+
+                <strong>MAY THE FORCE BE WITH YOU</strong>
+            </article>
+        </div>
+        <div id="notSupported" class="overlay">
+            <article>
+                <h2>SORRY, BUT...</h2>
+                
+                <p>your screen size is smaller then Yoda needs to focus the force. Try it on desktop or laptop!</p>
+        </div>
+        <div id="credits" class="overlay">
+
+            <h2>CREDITS</h2>
+            <section itemscope itemtype="http://schema.org/EducationEvent">
+                <img id="felLogo" src="img/pixelFEL.png" alt="CTU FEE logo"/>
+                <p>
+                    <span itemprop="workPerformed" itemscope itemtype="http://schema.org/CreativeWork">
+                        <span itemprop="about">Game</span> <a itemprop="name" href="http://tomaspastyrik.cz/StoneRush/">Stone Rush</a>
+                        <span class="hide" itemprop="url">http://tomaspastyrik.cz/StoneRush/</span>
+                    </span> was developed by <span itemprop="attendee">Tomáš Pastýřík</span> <br>
+                    as assignment for <a itemprop="name" target="_blank" href="http://seznam.github.io/CVUT/A0M33KAJ/" title="link to course">A0M33KAJ</a> course
+                    at CTU.  <br>
+                    <br>
+
+                    Lectures: <span itemprop="performer">RNDr. Ondřej Žára, Seznam.cz</span><br>
+                    Seminars: <span itemprop="performer">Bc. Zdeněk Vlach, Seznam.cz</span> <br><br>
+                    <a itemprop="sameAs" target="_blank" href="http://seznam.github.io/CVUT/A0M33KAJ/" title="link to course">http://seznam.github.io/CVUT/A0M33KAJ/</a>
+                    <span class="hide"><span  itemprop="startDate">02-17-2014</span> do <span itemprop="endDate">05-23-2014</span></span>
+                </p> 
+            </section>
+        </div>
+        <section>
+            <div id="gameWrapper">
+                <div id="storeGrid"></div>
+                <div id="gameViewport">
+                    <div id="compasWrap">
+                        <div id="compas">
+                            <div id="needle"></div>
+                        </div>		    
+                    </div>
+                    <div id="gameGrid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            window.onload = function() {
+                var game = new StoneRushGame();
+                game.start();
+
+                var cm = new ContentManager();
+                var svgb = new SVGBorder(320, 140, document.getElementById('description'));
+            };
+        </script> 
+    </body>
+</html>

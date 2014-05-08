@@ -1,0 +1,488 @@
+@charset "UTF-8";
+/** 
+ * This file is part of semestral assigment
+ * STONE RUSH GAME for A0M33KAJ course
+ * at CTU FEE, 2014
+ * 
+ * @author Tom Pastýřík <mail@tomaspastyrik.cz>
+ */
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P&subset=latin,latin-ext);
+/**********************************
+              COLORS
+***********************************/
+/**********************************
+              MIXINS
+***********************************/
+/**********************************
+              STYLES
+***********************************/
+body {
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  background-color: #333333;
+  min-width: 670px;
+  _width: 670px; }
+
+#notSupported {
+  display: none; }
+
+h1 {
+  font-size: 500%;
+  padding-left: 50px;
+  margin: 30px 0 0 0;
+  color: white; }
+
+ul li {
+  display: inline-block;
+  padding: 0 20px 0 0; }
+  ul li a {
+    display: inline-block;
+    color: white;
+    width: 100%; }
+  ul li a:hover {
+    color: #f29900; }
+
+#description {
+  width: 320px;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  padding-right: 40px; }
+
+#descriptionText {
+  width: 270px;
+  padding: 10px 20px;
+  color: #FFF;
+  font-size: 80%;
+  line-height: 150%;
+  position: absolute; }
+  #descriptionText a {
+    color: #f29900; }
+  #descriptionText a:hover {
+    color: black; }
+
+@media only screen and (max-width: 1224px) {
+  h1 {
+    font-size: 300%; }
+
+  nav {
+    height: 80px;
+    font-size: 70%; } }
+@media only screen and (max-width: 920px) {
+  h1 {
+    font-size: 300%;
+    width: 300px;
+    margin-bottom: 50px; }
+
+  nav {
+    height: 80px;
+    font-size: 70%; }
+
+  #notSupported {
+    display: block; } }
+@media only screen and (max-width: 670px) {
+  h1 {
+    font-size: 300%;
+    width: 300px;
+    margin-bottom: 50px; }
+
+  nav {
+    height: 80px;
+    font-size: 70%; }
+    nav ul li {
+      display: block;
+      padding-bottom: 5px; }
+
+  #notSupported {
+    display: block; }
+
+  #description {
+    display: none; } }
+/* animation */
+@-webkit-keyframes scroll {
+  0% {
+    top: 70%; }
+
+  100% {
+    top: -170%; } }
+@-moz-keyframes scroll {
+  0% {
+    top: 70%; }
+
+  100% {
+    top: -170%; } }
+@-ms-keyframes scroll {
+  0% {
+    top: 70%; }
+
+  100% {
+    top: -170%; } }
+@-o-keyframes scroll {
+  0% {
+    top: 70%; }
+
+  100% {
+    top: -170%; } }
+@keyframes scroll {
+  0% {
+    top: 70%; }
+
+  100% {
+    top: -170%; } }
+.overlay {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: wheat;
+  height: 450px;
+  display: none; }
+  .overlay p {
+    color: white; }
+  .overlay a {
+    color: #f29900; }
+  .overlay h2 {
+    font-size: 200%; }
+  .overlay ul {
+    width: 900px;
+    margin: 20px auto;
+    text-align: left; }
+    .overlay ul li {
+      color: wheat;
+      list-style: none;
+      padding-bottom: 10px; }
+    .overlay ul li:nth-child(2n+1) {
+      color: orange; }
+  .overlay strong {
+    color: red; }
+
+.hide {
+  display: none; }
+
+#felLogo {
+  width: 200px;
+  margin: 20px; }
+
+#gameOver {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: wheat;
+  height: 450px;
+  display: none; }
+  #gameOver .win {
+    display: none;
+    color: #3BB878; }
+  #gameOver .loose {
+    display: none;
+    color: red; }
+  #gameOver .starWarsText {
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    left: 50%;
+    margin-left: -400px;
+    font-size: 350%;
+    text-align: center;
+    overflow: hidden;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: perspective(300px) rotateX(25deg);
+    -moz-transform: perspective(300px) rotateX(25deg);
+    -ms-transform: perspective(300px) rotateX(25deg);
+    -o-transform: perspective(300px) rotateX(25deg);
+    transform: perspective(300px) rotateX(25deg);
+    top: 0px; }
+  #gameOver p {
+    color: #FF6;
+    position: absolute;
+    top: 70%;
+    width: 800px;
+    -webkit-animation: scroll 50s linear 0s infinite;
+    -moz-animation: scroll 50s linear 0s infinite;
+    -ms-animation: scroll 50s linear 0s infinite;
+    -o-animation: scroll 50s linear 0s infinite;
+    animation: scroll 50s linear 0s infinite; }
+
+#currentLevel {
+  padding: 0;
+  color: red; }
+
+nav {
+  width: 825px; }
+
+ul {
+  width: 100%;
+  padding-left: 50px;
+  list-style-type: square; }
+
+#nextLevel {
+  background-color: #3BB878;
+  border: none;
+  margin-top: 8px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 120%;
+  padding: 20px;
+  display: inline-block;
+  color: white;
+  text-decoration: none; }
+  #nextLevel button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 100%;
+    background-color: #3BB878;
+    border: none;
+    color: white; }
+
+#nextLevel:hover, #nextLevel button:hover {
+  background-color: #006633;
+  cursor: pointer; }
+  #nextLevel:hover button, #nextLevel button:hover button {
+    background-color: #006633; }
+
+canvas {
+  background-color: transparent;
+  position: absolute;
+  bottom: 230px;
+  left: 368px;
+  z-index: 100; }
+
+#gameWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 50; }
+
+#gameViewport {
+  width: 100%;
+  overflow: hidden;
+  border: 44px solid #333333;
+  border-top: 5px solid #333333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  background-image: url(../img/stars.jpg);
+  background-size: cover; }
+
+#gameGrid {
+  z-index: 1;
+  margin-left: -688px;
+  margin-top: -770px;
+  width: 2200px;
+  float: left;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  #gameGrid .skewed {
+    -webkit-transform: skew(-30deg, 0deg);
+    -moz-transform: skew(-30deg, 0deg);
+    -ms-transform: skew(-30deg, 0deg);
+    -o-transform: skew(-30deg, 0deg);
+    transform: skew(-30deg, 0deg); }
+  #gameGrid .gameCell {
+    width: 44px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #f29900;
+    -webkit-box-shadow: inset 0px 0px 3px 2px #f29900;
+    -moz-box-shadow: inset 0px 0px 3px 2px #f29900;
+    box-shadow: inset 0px 0px 3px 2px #f29900; }
+  #gameGrid .gameCell.stoned {
+    position: absolute;
+    border: 1px solid white;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -6px;
+    margin-top: -6px; }
+    #gameGrid .gameCell.stoned .timer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding-top: 8px;
+      text-align: center; }
+  #gameGrid .gameCell.stoned:before {
+    content: "";
+    background-color: #999;
+    width: 42px;
+    height: 5px;
+    position: absolute;
+    margin-top: 38px;
+    -webkit-transform: skew(45deg, 0deg);
+    -moz-transform: skew(45deg, 0deg);
+    -ms-transform: skew(45deg, 0deg);
+    -o-transform: skew(45deg, 0deg);
+    transform: skew(45deg, 0deg);
+    border: 1px solid #FFF;
+    margin-left: 2px; }
+  #gameGrid .gameCell.stoned:after {
+    content: "";
+    background-color: #666;
+    width: 5px;
+    height: 38px;
+    position: absolute;
+    margin-top: 2px;
+    -webkit-transform: skew(0deg, 45deg);
+    -moz-transform: skew(0deg, 45deg);
+    -ms-transform: skew(0deg, 45deg);
+    -o-transform: skew(0deg, 45deg);
+    transform: skew(0deg, 45deg);
+    border: 1px solid #FFF;
+    margin-left: 42px; }
+  #gameGrid .gameCell.start {
+    background-color: #ba0000; }
+  #gameGrid .gameCell.red {
+    background-color: #f26c4f; }
+  #gameGrid .gameCell.yellowOrange {
+    background-color: #fbaf5c; }
+  #gameGrid .gameCell.yellow {
+    background-color: #fff467; }
+  #gameGrid .gameCell.peaGreen {
+    background-color: #acd372; }
+  #gameGrid .gameCell.green {
+    background-color: #3bb878; }
+  #gameGrid .gameCell.cyan {
+    background-color: #00bff3; }
+  #gameGrid .gameCell.cyanBlue {
+    background-color: #438cca; }
+  #gameGrid .gameCell.blueViolet {
+    background-color: #605ca8; }
+  #gameGrid .gameCell.violetMagenta {
+    background-color: #a763a8; }
+  #gameGrid .gameCell.magenta {
+    background-color: #f06ea9; }
+  #gameGrid .gameCellWrapper {
+    width: 44px;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    height: 40px; }
+  #gameGrid .gameCellWrapper.finish {
+    background-image: url("../img/finish.png");
+    background-size: 30px 30px;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    #gameGrid .gameCellWrapper.finish .gameCell.stoned {
+      background-image: url("../img/finish.png");
+      background-size: 30px 30px;
+      background-position: center center;
+      background-repeat: no-repeat; }
+
+#storeGrid {
+  margin-top: 3px;
+  z-index: 100;
+  width: 320px;
+  position: absolute;
+  right: 0;
+  background-color: #333333;
+  padding: 40px;
+  padding-top: 2px;
+  display: inline-block; }
+  #storeGrid .gameCell {
+    width: 36px;
+    height: 36px;
+    margin: 1px;
+    border: 1px solid white;
+    background-color: #cccccc;
+    float: left; }
+  #storeGrid .gameStone.red {
+    background-color: #f26c4f; }
+  #storeGrid .gameStone.yellowOrange {
+    background-color: #fbaf5c; }
+  #storeGrid .gameStone.yellow {
+    background-color: #fff467; }
+  #storeGrid .gameStone.peaGreen {
+    background-color: #acd372; }
+  #storeGrid .gameStone.green {
+    background-color: #3bb878; }
+  #storeGrid .gameStone.cyan {
+    background-color: #00bff3; }
+  #storeGrid .gameStone.cyanBlue {
+    background-color: #438cca; }
+  #storeGrid .gameStone.blueViolet {
+    background-color: #605ca8; }
+  #storeGrid .gameStone.violetMagenta {
+    background-color: #a763a8; }
+  #storeGrid .gameStone.magenta {
+    background-color: #f06ea9; }
+
+.gameStone {
+  background-color: #00bff3;
+  border: 0px solid black;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .gameStone .timer {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    padding-top: 8px;
+    text-align: center; }
+
+.gameStone[draggable] {
+  background-image: url("../img/hand-white.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
+.gameStone[draggable]:hover {
+  background-image: url("../img/hand.png"); }
+
+#compasWrap {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background-color: transparent; }
+
+#compas {
+  width: 50px;
+  height: 50px;
+  -webkit-box-radius: 50px;
+  -moz-box-radius: 50px;
+  box-radius: 50px;
+  background-color: #333333; }
+
+#needle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 5px 25px 5px;
+  border-color: transparent transparent #fc0000 transparent;
+  margin-left: 20px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%; }
+
+/*# sourceMappingURL=gameGrid.css.map */
