@@ -2,7 +2,7 @@ STONE RUSH Game
 ===============
 
 Goal of this project is to develop javascript OOP application using modern js APIs such as Drag&Drop, History API, and to try using canvas animation simultaneously with css3 transitions and animations. Also to make it fun,
-to create a simple game in a process. Live app will be availeble soon.
+to create a simple game in a process. Live app can be seen at [http://tomaspastyrik.cz/StoneRushGame/].
 
 Developed as assignment for [A0M33KAJ] course at CTU.
 
@@ -10,7 +10,7 @@ Lectures: RNDr. Ondřej Žára, Seznam.cz,
 Seminars: Bc. Zdeněk Vlach, Seznam.cz
 
 [A0M33KAJ]:http://seznam.github.io/CVUT/A0M33KAJ/
-
+[http://tomaspastyrik.cz/StoneRushGame/]:http://tomaspastyrik.cz/StoneRushGame/
 
 And I of course do not own any Star Wars rights,
 this was made just for fun.

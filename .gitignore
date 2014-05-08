@@ -1,2 +1,4 @@
 Deployment/*
 production.ini
+production.log
+temp/*
