@@ -49,7 +49,7 @@ Functionality
 
 Libraries used
 --------------
-* **[SASS v3.3.4] is used to generate final css files, using mainly for mixins and variables
+* **[SASS v3.3.4]** is used to generate final css files, using mainly for mixins and variables
 * **[JQuery v1.9.0]** used for some DOM manipulation and mainly as dependence of EaselJS library
 * **[EaselJS v0.6.0]** used for canvas sprite animation
 * **[Keydrown]** was used for input handling, because onKeyDown event produces short delay after the key is pressed and therefore causes lags and it is not sufficient solution for games at all. This is where Keydrown comes in.
@@ -68,3 +68,4 @@ Assets
 [http://untamed.wild-refuge.net]:http://untamed.wild-refuge.net
 [Google fonts]:https://www.google.com/fonts
 [Press Start 2P]:https://www.google.com/fonts/specimen/Press+Start+2P
+[SASS v3.3.4]:http://sass-lang.com/
