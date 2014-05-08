@@ -1,2 +1,2 @@
-./Deployment
-./production.ini
+Deployment/*
+production.ini
