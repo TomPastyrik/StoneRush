@@ -86,9 +86,9 @@ $gridLight: #F29900;
 }
 
 @mixin box-radius($values...){
-    -webkit-box-radius: $values;
-    -moz-box-radius: $values;
-    box-radius: $values;
+    -webkit-border-radius: $values;
+    -moz-border-radius: $values;
+    border-radius: $values;
 }
 
 
