@@ -36,7 +36,6 @@ StonesPuller.prototype.dragstart = function(event) {
     this.activeX = event.target.parentNode.getAttribute('data-x');
     this.activeY = event.target.parentNode.getAttribute('data-y');
     this.activeTTL = event.target.getAttribute('data-ttl');
-    console.log(this.activeTTL);
     var stoneParts = document.querySelectorAll('[data-stoneId=' + stoneId + ']');
     for (var i = 0; i < stoneParts.length; i++) {
 	stoneParts[i].style.opacity = 0.3;

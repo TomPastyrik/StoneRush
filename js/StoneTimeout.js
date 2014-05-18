@@ -31,8 +31,6 @@ StoneTimeout.prototype.run = function() {
 
     var i = 1;
 
-    console.log((this.coords[0] + stoneTypes[this.typeId][i * 2]), (this.coords[1] + stoneTypes[this.typeId][i * 2 + 1]));
-
     var cell = document.querySelector("#gameGrid [data-x='" + (this.coords[0] + stoneTypes[this.typeId][i * 2]) + "'][data-y='" + (this.coords[1] + stoneTypes[this.typeId][i * 2 + 1]) + "']");
     this.timerElement = document.createElement('div');
     this.timerElement.setAttribute('class', 'timer');

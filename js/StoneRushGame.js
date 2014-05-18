@@ -20,11 +20,14 @@ var StoneRushGame = function() {
     this.gridWidth = 50;
     this.gridHeight = 50;
 
+
+    this.levelLocker = new LevelLocker();
+
     gameGridElement = document.getElementById('gameGrid');
     GameGrid = new GameGrid(); //GLOBAL on purpose
 
     this.sg = new StonesGenerator();
-    this.gp = new Gameplay(this.startCoords, this.gridWidth, this.gridHeight, this.sg);
+    this.gp = new Gameplay(this.startCoords, this.gridWidth, this.gridHeight, this.sg, this.levelLocker);
     this.sp = new StonesPuller(this.gp);
     this.sg.stonesPuller = this.sp;
     MyHero = new Hero(this.gp, this.startCoords);
@@ -34,33 +37,37 @@ var StoneRushGame = function() {
     this.gi.resizeViewport();
     this.gi.createGamePlan();
     this.gi.createGameStore();
-    
+    this.cm = new ContentManager();
 };
 
 
 StoneRushGame.prototype.start = function() {
     var l = parseInt(getQueryVariable("level"));
     if (l !== 1 && l !== 2 && l !== 3 && l !== 4) {
-        l = 1;
+	l = 1;
     }
+    if (this.levelLocker.highestUnlockedLevel >= l) {
 
-    this.gp.level = l;
+	this.gp.level = l;
 
-    this.gp.initGame();
+	this.gp.initGame();
 
-    this.level = new Level(l, this.startCoords, this.gp);
+	this.level = new Level(l, this.startCoords, this.gp);
 
 
-    animator = new HeroAnimator(MyHero); // GLOBAL on purpose
-    animator.init();
-    
-    this.initializeHUD();
+	animator = new HeroAnimator(MyHero); // GLOBAL on purpose
+	animator.init();
+
+	this.initializeHUD();
+    } else {
+	this.cm.chooseContent({page : "cheater"});
+    }
 };
 
 StoneRushGame.prototype.initializeHUD = function() {
     var string = "";
     for (i = 0; i < 10; i++) {
-        string += 'You have <span class="loose">NOT</span> beaten the dark forces! ';
+	string += 'You have <span class="loose">NOT</span> beaten the dark forces! ';
     }
     var el = document.querySelector('.starWarsText p');
     el.innerHTML = string;

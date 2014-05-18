@@ -365,7 +365,7 @@ ul{
     list-style-type: square;
 }
 
-#nextLevel{
+#nextLevel, .unlockedLevel, #resetStats{
     background-color: #3BB878;
     border: none;
     margin-top: 8px;
@@ -375,6 +375,7 @@ ul{
     display: inline-block;
     color: white;
     text-decoration: none;
+    margin: 1px;
 
     button{
         font-family: 'Press Start 2P', cursive;
@@ -385,12 +386,28 @@ ul{
     }
 }
 
-#nextLevel:hover, #nextLevel button:hover{
+#nextLevel:hover, #nextLevel button:hover,
+.unlockedLevel:hover, .unlockedLevel button:hover{
     background-color: #006633;
     cursor: pointer;
 
     button{
         background-color: #006633;
+    }
+}
+
+#resetStats{
+    background-color: $red;
+    button{
+	background-color: $red;
+    }
+}
+
+#resetStats:hover, #resetStats button:hover{
+    cursor: pointer;
+    background-color: $red*0.8;
+    button{
+	background-color: $red*0.8;
     }
 }
 

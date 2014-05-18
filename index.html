@@ -32,6 +32,7 @@
 
         <link rel="stylesheet" href="css/gameGrid.css">
 
+        <script src="js/LevelLocker.js"></script> 
         <script src="js/utils.js"></script>
         <script src="js/Hero.js"></script>
         <script src="js/stoneDefinitions.js"></script>
@@ -63,7 +64,7 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="">new game</a></li>
+                <li><a id="newGameLink" href="#newGame">new game</a></li>
                 <li><a id="rulesLink" href="#rules">rules</a></li>
                 <li><a id="creditsLink" href="#credits">credits</a></li>
                 <li id="currentLevel">current level: <span>1</span></li>
@@ -98,6 +99,39 @@
                 </ul>
 
                 <strong>MAY THE FORCE BE WITH YOU</strong>
+            </article>
+        </div>
+        <div id="cheater" class="overlay">
+            <article>
+                <h2>Yo, cheater!</h2>
+
+                <p>
+		    I see you are falling for the dark side<br> by accessing the reality that has not occurred for you yet.<br>
+		    In other words you have to win all levels<br> before this one to be here.<br> Play previous levels first!
+                </p>
+		
+                <p>
+		    Unlocked levels:
+                </p>
+		
+	
+            </article>
+        </div>
+        <div id="newGame" class="overlay">
+            <article>
+                <h2>Wanna start over <br>or just train<br> the power of the force?</h2>
+		
+		<p>
+		    Start over:
+		</p>
+		
+		<a id="resetStats" href="#"><button>RESET UNLOCKED LEVELS</button></a>
+		<br><br><br>
+
+                <p>
+		    Unlocked levels:
+                </p>
+		
             </article>
         </div>
         <div id="notSupported" class="overlay">
@@ -155,11 +189,10 @@
             <a target="_blank" href="https://github.com/TomPastyrik/StoneRush">https://github.com/TomPastyrik/StoneRush</a href=""></span>
         <script>
             window.onload = function() {
+                var svgb = new SVGBorder(320, 140, document.getElementById('description'));
                 var game = new StoneRushGame();
                 game.start();
 
-                var cm = new ContentManager();
-                var svgb = new SVGBorder(320, 140, document.getElementById('description'));
             };
         </script> 
     </body>

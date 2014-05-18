@@ -17,7 +17,7 @@
  * @param {StonesGenerator} sg
  * @returns {Gameplay}
  */
-var Gameplay = function(_startOrigin, gridWidth, gridHeight, sg) {
+var Gameplay = function(_startOrigin, gridWidth, gridHeight, sg, ll) {
 
     this.usedStones = [];
     this.storeStones = [];
@@ -29,7 +29,7 @@ var Gameplay = function(_startOrigin, gridWidth, gridHeight, sg) {
     this.startOrigin[0] = _startOrigin[0];
     this.startOrigin[1] = _startOrigin[1];
     this.startOrigin[1] -= 2;
-
+    this.levelLocker = ll;
     this.timeouts = [];
 
     for (var y = 0; y < gridHeight; y++) {
@@ -183,6 +183,8 @@ Gameplay.prototype.updateCompas = function(_x, _y){
 
 Gameplay.prototype.gameOver = function(status) {
     if (status === "WIN") {
+	if(this.level < 5) this.levelLocker.unlockLevel(this.level + 1);
+	
 	$('#gameOver').fadeIn(500);
 	$('#gameOver .win').fadeIn(2000);
 	for (i = 0; i < this.timeouts.length; i++) {

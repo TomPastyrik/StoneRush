@@ -20,6 +20,7 @@ var ContentManager = function() {
 
         this.registerLink("#rulesLink");
         this.registerLink("#creditsLink");
+        this.registerLink("#newGameLink");
 
 
         //navigate to content if permalink
@@ -71,6 +72,12 @@ ContentManager.prototype.chooseContent = function(state) {
                 break;
             case "credits":
                 $('#credits').fadeIn(500);
+                break;
+            case "newGame":
+                $('#newGame').fadeIn(500);
+                break;
+            case "cheater":
+                $('#cheater').fadeIn(500);
                 break;
         }
     }

@@ -46,6 +46,7 @@ Functionality
 * Funky border in top right corner is generated SVG with JS
 * Media queries used to support smaller displays, however mobile phones are not supported nor tablets without hardware keyboard, which is supported. Custom input handling would be needed for that.
 * So far only 4 levels are implemented with distance of finish cell rising and stones durability falling.
+* LocalStorage API is used to store unlocked levels to prevent cheating
 
 Libraries used
 --------------
