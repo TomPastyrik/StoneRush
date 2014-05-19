@@ -14,14 +14,15 @@
  * 
  * @returns {StoneRushGame}
  */
-var StoneRushGame = function() {
+var StoneRushGame = function(_maxLevel) {
     // CONFIG
     this.startCoords = [25, 25];
     this.gridWidth = 50;
     this.gridHeight = 50;
-
-
-    this.levelLocker = new LevelLocker();
+    this.maxLevel = _maxLevel;
+    
+    
+    this.levelLocker = new LevelLocker(_maxLevel);
 
     gameGridElement = document.getElementById('gameGrid');
     GameGrid = new GameGrid(); //GLOBAL on purpose
@@ -43,16 +44,19 @@ var StoneRushGame = function() {
 
 StoneRushGame.prototype.start = function() {
     var l = parseInt(getQueryVariable("level"));
-    if (l !== 1 && l !== 2 && l !== 3 && l !== 4) {
-	l = 1;
+
+    var levelOk = false;
+    for (var i = 1; i <= this.maxLevel; i++) {
+	if(i === l){ levelOk = true; break;}
     }
+    if(!levelOk) l = 1;
     if (this.levelLocker.highestUnlockedLevel >= l) {
 
 	this.gp.level = l;
 
 	this.gp.initGame();
 
-	this.level = new Level(l, this.startCoords, this.gp);
+	this.level = new Level(l,this.maxLevel, this.startCoords, this.gp);
 
 
 	animator = new HeroAnimator(MyHero); // GLOBAL on purpose

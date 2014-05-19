@@ -519,12 +519,66 @@ canvas {
   font-size: 70%;
   width: 100%;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  line-height: 140%; }
+  z-index: 100000;
+  line-height: 140%;
+  background-color: #282828;
+  padding: 5px 0; }
   #hostedOnGithub a {
     color: #f29900; }
   #hostedOnGithub a:hover {
     color: red; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  z-index: 100000;
+  width: 100%;
+  background-color: #282828; }
+  footer #controls {
+    padding: 5px 0;
+    background-color: #191919; }
+  footer input[type='range'] {
+    -webkit-appearance: none;
+    background-color: #f29900;
+    height: 5px;
+    vertical-align: middle;
+    margin-bottom: 6px;
+    width: 100px; }
+  footer input[type='range']::-moz-range-track {
+    -moz-appearance: none;
+    background-color: #f29900;
+    height: 5px;
+    vertical-align: middle; }
+  footer input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: #FFF;
+    border: none;
+    border-radius: 0px;
+    height: 15px;
+    width: 15px; }
+  footer input[type='range']::-moz-range-thumb {
+    -moz-appearance: none;
+    border-radius: 0px;
+    background-color: #FFF;
+    border: none;
+    height: 15px;
+    width: 15px; }
+  footer button {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    font-size: 80%;
+    background: #f29900;
+    padding: 3px 5px;
+    text-decoration: none;
+    border: none;
+    margin: 0 8px; }
+  footer button:hover {
+    background: #915b00;
+    text-decoration: none;
+    cursor: pointer; }
+  footer label {
+    font-size: 80%;
+    color: white; }
 
 /*# sourceMappingURL=gameGrid.css.map */

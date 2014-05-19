@@ -12,11 +12,12 @@
  * unlocked levels per user.
  * @returns {Boolean} false if localStorage is not supported
  */
-var LevelLocker = function() {
+var LevelLocker = function(_maxLevel) {
     if (!this.detectLocalStorage())
 	return false;
 
 
+    this.maxLevel = _maxLevel;
     this.highestUnlockedLevel = 1;
     this.lastWinTime = 0;
     this.initialize();

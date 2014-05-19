@@ -19,6 +19,8 @@
  */
 var Gameplay = function(_startOrigin, gridWidth, gridHeight, sg, ll) {
 
+    this.gridWidth = gridWidth;
+    this.gridHeight = gridHeight;
     this.usedStones = [];
     this.storeStones = [];
     this.level = 1;
@@ -183,7 +185,7 @@ Gameplay.prototype.updateCompas = function(_x, _y){
 
 Gameplay.prototype.gameOver = function(status) {
     if (status === "WIN") {
-	if(this.level < 5) this.levelLocker.unlockLevel(this.level + 1);
+	if(this.level < this.levelLocker.maxLevel) this.levelLocker.unlockLevel(this.level + 1);
 	
 	$('#gameOver').fadeIn(500);
 	$('#gameOver .win').fadeIn(2000);

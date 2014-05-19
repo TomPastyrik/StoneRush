@@ -45,7 +45,7 @@ StonesGenerator.prototype.putInitialStone = function(typeId, coords, stoneId, co
 
 StonesGenerator.prototype.putStone = function(typeId, coords, stoneId, color) {
 
-    var ttl = getRandomInt(5, 40/this.gameplay.level);
+    var ttl = getRandomInt(5, 5 + 40/this.gameplay.level);
     for (var i = 0; i < stoneTypes[typeId].length / 2; i++) {
 	var cell = document.querySelector("#storeGrid [data-x='" + (coords[0] + stoneTypes[typeId][i * 2]) + "'][data-y='" + (coords[1] + stoneTypes[typeId][i * 2 + 1]) + "']");
 	var stone = document.createElement('div');

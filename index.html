@@ -48,6 +48,7 @@
         <script src="js/StoneRushGame.js"></script>
         <script src="js/ContentManager.js"></script>
         <script src="js/SVGBorder.js"></script>
+        <script src="js/MusicPlayer.js"></script>
 
     </head> 
     <body>
@@ -109,29 +110,29 @@
 		    I see you are falling for the dark side<br> by accessing the reality that has not occurred for you yet.<br>
 		    In other words you have to win all levels<br> before this one to be here.<br> Play previous levels first!
                 </p>
-		
+
                 <p>
 		    Unlocked levels:
                 </p>
-		
-	
+
+
             </article>
         </div>
         <div id="newGame" class="overlay">
             <article>
                 <h2>Wanna start over <br>or just train<br> the power of the force?</h2>
-		
+
 		<p>
 		    Start over:
 		</p>
-		
+
 		<a id="resetStats" href="#"><button>RESET UNLOCKED LEVELS</button></a>
 		<br><br><br>
 
                 <p>
 		    Unlocked levels:
                 </p>
-		
+
             </article>
         </div>
         <div id="notSupported" class="overlay">
@@ -161,6 +162,7 @@
                 </p> 
 
                 <h3>USED ASSETS</h3>
+		
                 <ul>
                     <li><a href="http://sass-lang.com/">SASS v3.3.4</a> for css management</li> 
                     <li><a href="http://jquery.com/">JQuery v1.9.0</a> as dependency for EaselJS</li>
@@ -168,7 +170,8 @@
                     <li><a href="http://jeremyckahn.github.io/keydrown/">Keydrown</a> for seamless input handling</li>
                     <li>Animation sprite of Yoda that is used comes from free collection of sprites at <a href="http://untamed.wild-refuge.net">untamed.wild-refuge.net</a></li>
                     <li>Used font <a href="https://www.google.com/fonts/specimen/Press+Start+2P">Press Start 2P</a> is part of Google Fonts</li>
-                </ul>
+		    <li>Music is Fuzzy tunes by King Louie provided<br> by <a href="http://www.jamendo.com">http://www.jamendo.com</a> for free</li>
+		</ul>
             </section>
         </div>
         <section>
@@ -185,15 +188,32 @@
                 </div>
             </div>
         </section>
-        <span id="hostedOnGithub">Source code is also hosted on Github!<br>
-            <a target="_blank" href="https://github.com/TomPastyrik/StoneRush">https://github.com/TomPastyrik/StoneRush</a href=""></span>
-        <script>
-            window.onload = function() {
-                var svgb = new SVGBorder(320, 140, document.getElementById('description'));
-                var game = new StoneRushGame();
-                game.start();
 
-            };
+
+	<footer>
+
+	    <span id="hostedOnGithub">Source code is also hosted on Github!<br>
+		<a target="_blank" href="https://github.com/TomPastyrik/StoneRush">https://github.com/TomPastyrik/StoneRush</a href=""></span>
+	    
+	    <audio id="player">
+		<source src="sound/Fuzzy_Tunes_-_Fuzzy_Tunes_-_King_Louie.ogg" type="audio/ogg" />
+		<source src="sound/Fuzzy_Tunes_-_Fuzzy_Tunes_-_King_Louie.mp3" type="audio/mpeg" />
+		<source src="sound/Fuzzy_Tunes_-_Fuzzy_Tunes_-_King_Louie.wav" type="audio/wave" />
+		Your browser sucks so much that it fails to play this awesome game music!
+	    </audio>
+	    <div id="controls">
+		<label for="volume">volume: </label><input id="volume" type="range" min="0" max="1" step="0.01" value="0.5"/>
+	    </div>
+	</footer>
+	<script>
+	    window.onload = function() {
+		var svgb = new SVGBorder(320, 140, document.getElementById('description'));
+		game = new StoneRushGame(10);
+		game.start();
+
+		var mp = new MusicPlayer();
+
+	    };
         </script> 
     </body>
 </html>

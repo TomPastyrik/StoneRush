@@ -16,12 +16,16 @@
  * @param {Gameplay} _gamePlay
  * @returns {Level}
  */
-var Level = function(_difficulty, _gameCenter, _gamePlay) {
-
-    if (_difficulty !== 1 && _difficulty !== 2 && _difficulty !== 3 && _difficulty !== 4) {
-	_difficulty = 1;
+var Level = function(_difficulty,_maxLevel, _gameCenter, _gamePlay) {
+    
+    var levelOk = false;
+    console.log(_difficulty, _maxLevel);
+    for (var i = 1; i <= _maxLevel; i++) {
+	if(i == _difficulty){ levelOk = true; break;}
     }
-
+    if(!levelOk) _difficulty = 1;
+    
+    this.maxLevel = _maxLevel;
     this.difficulty = _difficulty;
     this.gameCenter = _gameCenter;
     this.gamePlay = _gamePlay;
@@ -33,7 +37,7 @@ var Level = function(_difficulty, _gameCenter, _gamePlay) {
     this.gamePlay.updateCompas(this.gameCenter[0], this.gameCenter[1]);
 
     $('#currentLevel span').html(_difficulty);
-    if (_difficulty < 4) {
+    if (_difficulty < this.maxLevel) {
 	$('#nextLevel').attr("href", "?level=" + (_difficulty + 1));
     }else{
 	$('#nextLevel').remove();
@@ -42,15 +46,17 @@ var Level = function(_difficulty, _gameCenter, _gamePlay) {
 };
 
 Level.prototype.generateFinishStone = function() {
-    var radius;
+    var minRadius;
+    var maxRadius;
 
     var x = this.gameCenter[0];
     var y = this.gameCenter[1];
-    radius = this.difficulty * 5;
+    minRadius = Math.round((this.difficulty-1) * 2.5);
+    maxRadius = Math.round(this.difficulty * 2.5);
 
-    while (this.gamePlay.usedStones[y][x] && this.gameCenter[0] - x < this.difficulty * 5 - 4 && this.gameCenter[1] - y < this.difficulty * 5 - 4) {
-	x = getRandomInt(this.gameCenter[0] - radius, this.gameCenter[0] + radius);
-	y = getRandomInt(this.gameCenter[1] - radius, this.gameCenter[1] + radius);
+    while (this.gamePlay.usedStones[y][x] && x > 0 && x <= this.gamePlay.gridWidth && y > 0 && y <= this.gamePlay.gridHeight) {
+	x = this.gameCenter[0] + getRandomSign() * getRandomInt(minRadius, maxRadius);
+	y = this.gameCenter[1] + getRandomSign() * getRandomInt(minRadius, maxRadius);
     }
 
     var cell = $("#gameGrid [data-x='" + (x) + "'][data-y='" + (y) + "']");
