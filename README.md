@@ -47,6 +47,7 @@ Functionality
 * Media queries used to support smaller displays, however mobile phones are not supported nor tablets without hardware keyboard, which is supported. Custom input handling would be needed for that.
 * So far only 4 levels are implemented with distance of finish cell rising and stones durability falling.
 * LocalStorage API is used to store unlocked levels to prevent cheating
+* Audio API is used to play and control the music with custom controls, localStorage API is used to keep the volume level during gameplay. Input of type 'range' is used for managing audio volume.
 
 Libraries used
 --------------
@@ -60,6 +61,7 @@ Assets
 
 * Animation sprite of Yoda that is used comes from free collection of sprites at [http://untamed.wild-refuge.net]
 * Used font is called [Press Start 2P] and it is part of [Google fonts] collection.
+* Music is Fuzzy tunes by King Louie provided by [www.jamendo.com] for free</li>
 
 **MAY THE FORCE BE WITH YOU**
 
@@ -70,3 +72,4 @@ Assets
 [Google fonts]:https://www.google.com/fonts
 [Press Start 2P]:https://www.google.com/fonts/specimen/Press+Start+2P
 [SASS v3.3.4]:http://sass-lang.com/
+[www.jamendo.com]:http://www.jamendo.com
