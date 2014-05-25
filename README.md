@@ -58,7 +58,8 @@ Libraries used
 
 Assets
 ------
-
+* Music is kindly provided by Adam J. Sporka [Adam @ Soundcloud]. To minimize repository size, music is not part of
+  this repo, however it is of course part of the live app at [http://tomaspastyrik.cz/StoneRushGame/]
 * Animation sprite of Yoda that is used comes from free collection of sprites at [http://untamed.wild-refuge.net]
 * Used font is called [Press Start 2P] and it is part of [Google fonts] collection.
 * Music is Fuzzy tunes by King Louie provided by [www.jamendo.com] for free</li>
@@ -73,3 +74,4 @@ Assets
 [Press Start 2P]:https://www.google.com/fonts/specimen/Press+Start+2P
 [SASS v3.3.4]:http://sass-lang.com/
 [www.jamendo.com]:http://www.jamendo.com
+[Adam @ Soundcloud]:https://soundcloud.com/adam_sporka/

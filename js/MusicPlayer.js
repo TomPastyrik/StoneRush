@@ -5,13 +5,20 @@ var MusicPlayer = function() {
 	this.play();
     });
 
-
+    this.initVolume = 1.0;
     this.randomStart = this.player.duration - Math.random() * this.player.duration;
+    
+    while(1){
+	if(this.player.readyState != 4){
+	    setTimeout(200);
+	}else break;
+    };
     this.player.currentTime = this.randomStart;
     this.createControls();
 
-
+    
     this.player.play();
+    $(this.player).animate({volume: this.initVolume}, 5000);
 };
 
 MusicPlayer.prototype.createControls = function() {
@@ -36,7 +43,8 @@ MusicPlayer.prototype.createControls = function() {
 	volval = localStorage.getItem("volume");
     }
     volume.value = volval;
-    this.player.volume = volval;
+    this.player.volume = 0;
+    this.initVolume = volval;
 };
 
 MusicPlayer.prototype.changeVolume = function(e) {

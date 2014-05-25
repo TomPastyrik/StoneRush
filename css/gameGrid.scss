@@ -686,7 +686,7 @@ canvas{
     text-align: center;
     z-index: 100000;
     line-height: 140%;
-    background-color: $background*0.8;
+    background-color: $background*0.5;
     padding: 5px 0;
 
     a{
@@ -698,17 +698,40 @@ canvas{
     }
 }
 
+#musicCredits{
+    display: inline-block;
+    color: white;
+    font-size: 70%;
+    width: 100%;
+    text-align: center;
+    z-index: 100000;
+    line-height: 140%;
+    background-color: $background*0.8;
+    padding: 5px 0;
+
+    a{
+        color: $gridLight;
+    }
+
+    a:hover{
+        color: red;
+    }
+    
+    strong{
+ text-transform: uppercase;
+    }
+}
 footer{
     position: absolute;
     bottom: 0;
     text-align: center;
     z-index: 100000;
     width: 100%;
-    background-color: $background*0.8;
+    background-color: $background*0.5;
     
     #controls{
     padding: 5px 0;
-    background-color: $background*0.5;
+    background-color: $background*0.8;
     }
     
     input[type='range'] {

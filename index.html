@@ -14,6 +14,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Stone Rush</title>
 
+	 <meta name="description" content="Stone Rush is a game developed by Tomáš Pastýřík as assigment for A0M33KAJ course CTU.
+	       Help master Yoda to find his way home! No wonder he got lost again considering
+                    his age...">
+        <meta property="og:title" content="Stone Rush Game"/>
+        <meta property="og:image" content="http://tomaspastyrik.cz/StoneRushGame/img/logo2.png"/>
+        <meta property="og:site_name" content="Stone Rush Game"/>
+        <meta property="og:url" content="http://tomaspastyrik.cz/StoneRushGame/"/>
+        <meta property="og:description" content="Stone Rush is a game developed by Tomáš Pastýřík as assigment for A0M33KAJ course CTU.
+	       Help master Yoda to find his way home! No wonder he got lost again considering
+                    his age..."/>
+
+	<link rel="shortcut icon" href="http://tomaspastyrik.cz/StoneRushGame/img/favicon.ico" />
+        <link rel="icon" type="image/png" href="http://tomaspastyrik.cz/StoneRushGame/img/favicon.png" />
+        <link rel="apple-touch-icon" href="http://tomaspastyrik.cz/StoneRushGame/img/favicon.png" />
+        <link rel="image_src" href="http://tomaspastyrik.cz/StoneRushGame/img/logo.png" />
+
+	
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -162,15 +179,15 @@
                 </p> 
 
                 <h3>USED ASSETS</h3>
-		
+
                 <ul>
+		    <li>Music is kindly provided by Adam J. Sporka <a href="https://soundcloud.com/adam_sporka/">Adam @ Soundcloud</a></li>
                     <li><a href="http://sass-lang.com/">SASS v3.3.4</a> for css management</li> 
                     <li><a href="http://jquery.com/">JQuery v1.9.0</a> as dependency for EaselJS</li>
                     <li><a href="http://www.createjs.com/#!/EaselJS">EaselJS</a> for canvas animation</li>
                     <li><a href="http://jeremyckahn.github.io/keydrown/">Keydrown</a> for seamless input handling</li>
                     <li>Animation sprite of Yoda that is used comes from free collection of sprites at <a href="http://untamed.wild-refuge.net">untamed.wild-refuge.net</a></li>
                     <li>Used font <a href="https://www.google.com/fonts/specimen/Press+Start+2P">Press Start 2P</a> is part of Google Fonts</li>
-		    <li>Music is Fuzzy tunes by King Louie provided<br> by <a href="http://www.jamendo.com">http://www.jamendo.com</a> for free</li>
 		</ul>
             </section>
         </div>
@@ -192,18 +209,28 @@
 
 	<footer>
 
-	    <span id="hostedOnGithub">Source code is also hosted on Github!<br>
-		<a target="_blank" href="https://github.com/TomPastyrik/StoneRush">https://github.com/TomPastyrik/StoneRush</a href=""></span>
-	    
 	    <audio id="player">
+		<!--		
 		<source src="sound/Fuzzy_Tunes_-_Fuzzy_Tunes_-_King_Louie.ogg" type="audio/ogg" />
 		<source src="sound/Fuzzy_Tunes_-_Fuzzy_Tunes_-_King_Louie.mp3" type="audio/mpeg" />
 		<source src="sound/Fuzzy_Tunes_-_Fuzzy_Tunes_-_King_Louie.wav" type="audio/wave" />
+		-->
+		<source src="sound/Noobieseq and Noobiesynth Tryout.ogg" type="audio/ogg" />
+		<source src="sound/Noobieseq and Noobiesynth Tryout.mp3" type="audio/mpeg" />
+		<source src="sound/Noobieseq and Noobiesynth Tryout.wav" type="audio/wave" />
 		Your browser sucks so much that it fails to play this awesome game music!
 	    </audio>
 	    <div id="controls">
 		<label for="volume">volume: </label><input id="volume" type="range" min="0" max="1" step="0.01" value="0.5"/>
+
 	    </div>
+	    <span id="musicCredits">
+		Playing awesome chiptune <strong>Noobieseq and Noobiesynth</strong> by Adam J. Sporka <a href="https://soundcloud.com/adam_sporka/">Adam @ Soundcloud</a>
+	    </span>
+	    <span id="hostedOnGithub">
+		Source code is also hosted on Github! 
+		<a target="_blank" href="https://github.com/TomPastyrik/StoneRush">https://github.com/TomPastyrik/StoneRush</a>
+	    </span>
 	</footer>
 	<script>
 	    window.onload = function() {

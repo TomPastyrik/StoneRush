@@ -521,12 +521,29 @@ canvas {
   text-align: center;
   z-index: 100000;
   line-height: 140%;
-  background-color: #282828;
+  background-color: #191919;
   padding: 5px 0; }
   #hostedOnGithub a {
     color: #f29900; }
   #hostedOnGithub a:hover {
     color: red; }
+
+#musicCredits {
+  display: inline-block;
+  color: white;
+  font-size: 70%;
+  width: 100%;
+  text-align: center;
+  z-index: 100000;
+  line-height: 140%;
+  background-color: #282828;
+  padding: 5px 0; }
+  #musicCredits a {
+    color: #f29900; }
+  #musicCredits a:hover {
+    color: red; }
+  #musicCredits strong {
+    text-transform: uppercase; }
 
 footer {
   position: absolute;
@@ -534,10 +551,10 @@ footer {
   text-align: center;
   z-index: 100000;
   width: 100%;
-  background-color: #282828; }
+  background-color: #191919; }
   footer #controls {
     padding: 5px 0;
-    background-color: #191919; }
+    background-color: #282828; }
   footer input[type='range'] {
     -webkit-appearance: none;
     background-color: #f29900;
