@@ -561,7 +561,8 @@ footer {
     height: 5px;
     vertical-align: middle;
     margin-bottom: 6px;
-    width: 100px; }
+    width: 100px;
+    padding: 0; }
   footer input[type='range']::-moz-range-track {
     -moz-appearance: none;
     background-color: #f29900;
@@ -581,6 +582,10 @@ footer {
     border: none;
     height: 15px;
     width: 15px; }
+  footer input[type="range"]::-ms-fill-upper {
+    background-color: #f29900; }
+  footer input[type="range"]::-ms-fill-lower {
+    background-color: #f29900; }
   footer button {
     font-family: 'Press Start 2P', cursive;
     color: #ffffff;

@@ -5,21 +5,24 @@ var MusicPlayer = function() {
 	this.play();
     });
 
-    this.initVolume = 1.0;
-    this.randomStart = this.player.duration - Math.random() * this.player.duration;
-    
-    while(1){
-	if(this.player.readyState != 4){
-	    setTimeout(200);
-	}else break;
-    };
-    this.player.currentTime = this.randomStart;
-    this.createControls();
+    this.timer = setInterval(this.initialize.bind(this), 500);
 
-    
-    this.player.play();
-    $(this.player).animate({volume: this.initVolume}, 5000);
 };
+
+
+MusicPlayer.prototype.initialize = function() {
+    console.log(this.player.readyState);
+    if (this.player.readyState >= 2) {
+	clearInterval(this.timer);
+	this.initVolume = 1.0;
+	this.randomStart = this.player.duration - Math.random() * this.player.duration;
+	this.player.currentTime = this.randomStart;
+	this.createControls();
+	this.player.play();
+	$(this.player).animate({volume: this.initVolume}, 5000);
+    }
+};
+
 
 MusicPlayer.prototype.createControls = function() {
 

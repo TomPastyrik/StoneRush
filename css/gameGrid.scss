@@ -716,9 +716,9 @@ canvas{
     a:hover{
         color: red;
     }
-    
+
     strong{
- text-transform: uppercase;
+	text-transform: uppercase;
     }
 }
 footer{
@@ -728,12 +728,12 @@ footer{
     z-index: 100000;
     width: 100%;
     background-color: $background*0.5;
-    
+
     #controls{
-    padding: 5px 0;
-    background-color: $background*0.8;
+	padding: 5px 0;
+	background-color: $background*0.8;
     }
-    
+
     input[type='range'] {
 	-webkit-appearance: none;
 	background-color: $gridLight;
@@ -741,6 +741,7 @@ footer{
 	vertical-align: middle;
 	margin-bottom: 6px;
 	width: 100px;	
+	padding: 0;
     }
     input[type='range']::-moz-range-track {
 	-moz-appearance: none;
@@ -763,6 +764,13 @@ footer{
 	border: none;
 	height: 15px;
 	width: 15px;
+    }
+
+    input[type="range"]::-ms-fill-upper {
+	background-color: $gridLight;
+    }
+    input[type="range"]::-ms-fill-lower {
+	background-color: $gridLight;
     }
 
     button {
